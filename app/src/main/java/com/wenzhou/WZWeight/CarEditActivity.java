@@ -1,28 +1,7 @@
 package com.wenzhou.WZWeight;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-import org.apache.http.NameValuePair;
-import org.apache.http.message.BasicNameValuePair;
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import com.wenzhou.WZWeight.CarActivity.GetCarDetailTask;
-import com.wenzhou.WZWeight.CarActivity.GetCarTypeTask;
-import com.wenzhou.WZWeight.CarActivity.GetRegionTask;
-import com.wenzhou.WZWeight.CarActivity.GetRubbishSourceTask;
-import com.wenzhou.WZWeight.application.Constant;
-import com.wenzhou.WZWeight.application.HttpClientUtil;
-import com.wenzhou.WZWeight.log.MyLog;
-
 import android.app.Activity;
-import android.app.Instrumentation;
 import android.app.ProgressDialog;
-import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -37,6 +16,21 @@ import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.wenzhou.WZWeight.application.Constant;
+import com.wenzhou.WZWeight.application.HttpClientUtil;
+import com.wenzhou.WZWeight.log.MyLog;
+
+import org.apache.http.NameValuePair;
+import org.apache.http.message.BasicNameValuePair;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class CarEditActivity extends Activity {
 	private static final String TAG = "Activity_caredit";
@@ -91,7 +85,7 @@ public class CarEditActivity extends Activity {
 
 		if (type.equals("edit")) {
 			carid = intent.getStringExtra("carid");
-			title.setText("�޸ĳ���");
+			title.setText("修改车辆");
 		}
 
 
@@ -121,7 +115,7 @@ public class CarEditActivity extends Activity {
 				String cartypeid = ((SpinnerData) cartypeSpinner.getSelectedItem()).getValue();
 				String rubbishtypeid = ((SpinnerData) rubbishtypeSpinner.getSelectedItem()).getValue();
 				if (plateno.equals("") || carno.equals("") || carweight.equals("") || carcheckweight.equals("")) {
-					Toast.makeText(CarEditActivity.this, "�뽫������Ϣ��д����", Toast.LENGTH_SHORT).show();
+					Toast.makeText(CarEditActivity.this, "请将车辆信息填写完整！", Toast.LENGTH_SHORT).show();
 					return;
 				}
 				objCarPara = new JSONObject();
@@ -180,7 +174,7 @@ public class CarEditActivity extends Activity {
 		@Override
 		protected void onPreExecute() {
 			super.onPreExecute();
-			dialogMine.setMessage("���ڻ�ȡ������Ϣ�����Ժ�...");
+			dialogMine.setMessage("正在获取车辆信息，请稍后...");
 		}
 
 
@@ -272,7 +266,7 @@ public class CarEditActivity extends Activity {
 		protected void onPostExecute(Boolean result) {
 			super.onPostExecute(result);
 			if (result == true) {
-				Toast.makeText(CarEditActivity.this, "�½������ɹ���", Toast.LENGTH_SHORT).show();
+				Toast.makeText(CarEditActivity.this, "新建车辆成功!", Toast.LENGTH_SHORT).show();
 				try {
 					Runtime runtime = Runtime.getRuntime();
 					runtime.exec("input keyevent " + KeyEvent.KEYCODE_BACK);
@@ -282,10 +276,10 @@ public class CarEditActivity extends Activity {
 				}
 			} else {
 				if (saveStatus == 3) {
-					Toast.makeText(CarEditActivity.this, "���ƺ��ظ���", Toast.LENGTH_SHORT).show();
+					Toast.makeText(CarEditActivity.this, "车牌号重复！", Toast.LENGTH_SHORT).show();
 				}
 				if (saveStatus == 4) {
-					Toast.makeText(CarEditActivity.this, "�Ա���ظ���", Toast.LENGTH_SHORT).show();
+					Toast.makeText(CarEditActivity.this, "自编号重复！", Toast.LENGTH_SHORT).show();
 				}
 			}
 		}
@@ -329,7 +323,7 @@ public class CarEditActivity extends Activity {
 		protected void onPostExecute(Boolean result) {
 			super.onPostExecute(result);
 			if (result == true) {
-				Toast.makeText(CarEditActivity.this, "�޸ĳ�����Ϣ�ɹ���", Toast.LENGTH_SHORT).show();
+				Toast.makeText(CarEditActivity.this, "修改车辆信息成功！", Toast.LENGTH_SHORT).show();
 				try {
 					Runtime runtime = Runtime.getRuntime();
 					runtime.exec("input keyevent " + KeyEvent.KEYCODE_BACK);
@@ -339,10 +333,10 @@ public class CarEditActivity extends Activity {
 				}
 			} else {
 				if (saveStatus == 3) {
-					Toast.makeText(CarEditActivity.this, "���ƺ��ظ���", Toast.LENGTH_SHORT).show();
+					Toast.makeText(CarEditActivity.this, "车牌号重复！", Toast.LENGTH_SHORT).show();
 				}
 				if (saveStatus == 4) {
-					Toast.makeText(CarEditActivity.this, "�Ա���ظ���", Toast.LENGTH_SHORT).show();
+					Toast.makeText(CarEditActivity.this, "自编号重复！", Toast.LENGTH_SHORT).show();
 				}
 			}
 		}
@@ -356,8 +350,8 @@ public class CarEditActivity extends Activity {
 			super.onPreExecute();
 			dialogMine = new ProgressDialog(CarEditActivity.this);
 			dialogMine.setProgressStyle(ProgressDialog.STYLE_SPINNER);
-			dialogMine.setTitle("��ȴ�...");
-			dialogMine.setMessage("���ڻ�ȡ�����б?���Ժ�...");
+			dialogMine.setTitle("请等待...");
+			dialogMine.setMessage("正在获取区域列表，请稍后...");
 			dialogMine.setIcon(R.drawable.ic);
 			dialogMine.setCancelable(true);
 			dialogMine.setIndeterminate(false);
@@ -432,7 +426,7 @@ public class CarEditActivity extends Activity {
 		@Override
 		protected void onPreExecute() {
 			super.onPreExecute();
-			dialogMine.setMessage("���ڻ�ȡ����ͤ�б?���Ժ�...");
+			dialogMine.setMessage("正在获取垃圾亭列表，请稍后...");
 		}
 
 
@@ -503,7 +497,7 @@ public class CarEditActivity extends Activity {
 		@Override
 		protected void onPreExecute() {
 			super.onPreExecute();
-			dialogMine.setMessage("���ڻ�ȡ�����б?���Ժ�...");
+			dialogMine.setMessage("正在获取车型列表，请稍后...");
 		}
 
 
@@ -569,7 +563,7 @@ public class CarEditActivity extends Activity {
 		@Override
 		protected void onPreExecute() {
 			super.onPreExecute();
-			dialogMine.setMessage("���ڻ�ȡ��λ�б?���Ժ�...");
+			dialogMine.setMessage("正在获取单位列表，请稍后...");
 		}
 
 
@@ -635,7 +629,7 @@ public class CarEditActivity extends Activity {
 		@Override
 		protected void onPreExecute() {
 			super.onPreExecute();
-			dialogMine.setMessage("���ڻ�ȡ���������б?���Ժ�...");
+			dialogMine.setMessage("正在获取载质类型列表，请稍后...");
 		}
 
 

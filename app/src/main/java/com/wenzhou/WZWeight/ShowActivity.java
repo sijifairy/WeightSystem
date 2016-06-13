@@ -1,40 +1,7 @@
 package com.wenzhou.WZWeight;
 
-import java.text.DateFormat;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-import org.apache.http.HttpResponse;
-import org.apache.http.client.methods.HttpPost;
-import org.apache.http.entity.StringEntity;
-import org.apache.http.impl.client.DefaultHttpClient;
-import org.apache.http.params.CoreConnectionPNames;
-import org.apache.http.util.EntityUtils;
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import com.wenzhou.WZWeight.R;
-import com.wenzhou.WZWeight.widget.NewDataToastButtom;
-import com.wenzhou.WZWeight.widget.NewDataToastTop;
-import com.wenzhou.WZWeight.widget.PullToRefreshListView;
-import com.wenzhou.WZWeight.CheckActivity.refreshThread;
-import com.wenzhou.WZWeight.adapter.ExpandableAdapter;
-import com.wenzhou.WZWeight.adapter.ExpandableAdapterFromme;
-import com.wenzhou.WZWeight.application.Constant;
-import com.wenzhou.WZWeight.log.MyLog;
-import com.wenzhou.WZWeight.sqlite.DataBaseAdapter;
-import com.wenzhou.WZWeight.sqlite.InfoColumn;
-
 import android.app.AlertDialog.Builder;
 import android.app.DatePickerDialog;
-import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.app.TabActivity;
 import android.content.ContentValues;
@@ -50,7 +17,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
-import android.view.View.OnLongClickListener;
 import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemLongClickListener;
@@ -59,14 +25,43 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ExpandableListView;
-import android.widget.ExpandableListView;
+import android.widget.ExpandableListView.OnChildClickListener;
+import android.widget.ExpandableListView.OnGroupClickListener;
 import android.widget.ProgressBar;
 import android.widget.Spinner;
 import android.widget.TabHost;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.widget.ExpandableListView.OnChildClickListener;
-import android.widget.ExpandableListView.OnGroupClickListener;
+
+import com.wenzhou.WZWeight.adapter.ExpandableAdapter;
+import com.wenzhou.WZWeight.adapter.ExpandableAdapterFromme;
+import com.wenzhou.WZWeight.application.Constant;
+import com.wenzhou.WZWeight.log.MyLog;
+import com.wenzhou.WZWeight.sqlite.DataBaseAdapter;
+import com.wenzhou.WZWeight.sqlite.InfoColumn;
+import com.wenzhou.WZWeight.widget.NewDataToastButtom;
+import com.wenzhou.WZWeight.widget.NewDataToastTop;
+import com.wenzhou.WZWeight.widget.PullToRefreshListView;
+
+import org.apache.http.HttpResponse;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.entity.StringEntity;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.params.CoreConnectionPNames;
+import org.apache.http.util.EntityUtils;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class ShowActivity extends TabActivity {
 	private static final String TAG = "Acitivity_show";

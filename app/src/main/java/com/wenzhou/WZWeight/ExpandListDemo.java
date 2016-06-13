@@ -1,10 +1,5 @@
 package com.wenzhou.WZWeight;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
 import android.app.Activity;
 import android.database.Cursor;
 import android.os.Bundle;
@@ -16,12 +11,16 @@ import android.widget.ExpandableListView.OnChildClickListener;
 import android.widget.ExpandableListView.OnGroupClickListener;
 import android.widget.Toast;
 
-import com.wenzhou.WZWeight.R;
 import com.wenzhou.WZWeight.adapter.ExpandableAdapter;
 import com.wenzhou.WZWeight.application.Constant;
 import com.wenzhou.WZWeight.log.MyLog;
 import com.wenzhou.WZWeight.sqlite.DataBaseAdapter;
 import com.wenzhou.WZWeight.sqlite.InfoColumn;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class ExpandListDemo extends Activity {
 

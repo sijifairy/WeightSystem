@@ -1,9 +1,9 @@
 package com.wenzhou.WZWeight.application;
 
-import org.apache.http.client.CookieStore;
-
 import android.app.Application;
 import android.graphics.drawable.Drawable;
+
+import org.apache.http.client.CookieStore;
 
 public class OATask extends Application{
 	

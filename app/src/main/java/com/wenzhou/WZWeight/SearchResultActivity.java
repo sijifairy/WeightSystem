@@ -1,24 +1,8 @@
 package com.wenzhou.WZWeight;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-import org.apache.http.NameValuePair;
-import org.apache.http.message.BasicNameValuePair;
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import com.wenzhou.WZWeight.application.Constant;
-import com.wenzhou.WZWeight.application.HttpClientUtil;
-import com.wenzhou.WZWeight.log.MyLog;
-
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.AsyncTask;
@@ -28,12 +12,27 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.view.Window;
 import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
-import android.widget.AdapterView.OnItemClickListener;
+
+import com.wenzhou.WZWeight.application.Constant;
+import com.wenzhou.WZWeight.application.HttpClientUtil;
+import com.wenzhou.WZWeight.log.MyLog;
+
+import org.apache.http.NameValuePair;
+import org.apache.http.message.BasicNameValuePair;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class SearchResultActivity extends Activity {
 	private static final String TAG = "Activity_searchresult";
@@ -159,7 +158,7 @@ public class SearchResultActivity extends Activity {
 			public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 				mDataCurrent = new ArrayList<Map<String, Object>>();
 				Map<String, Object> current = mData.get(position);
-				String[] labels = { "���ƺ�", "�Ա��", "����ͤ", "����", "����ʱ��", "ë��", "Ƥ��", "����" };
+				String[] labels = { "车牌号", "车辆编号", "垃圾亭", "区域", "称重时间", "毛重", "皮重", "净重" };
 				String[] contents = { "PlateNo", "CarNo", "RubbishSourceName", "Region", "TimeWeight", "AllWeight", "Weightleave", "JingZhong" };
 
 				for (int i = 0; i < labels.length; i++) {
@@ -221,8 +220,8 @@ public class SearchResultActivity extends Activity {
 			super.onPreExecute();
 			dialogMine = new ProgressDialog(SearchResultActivity.this);
 			dialogMine.setProgressStyle(ProgressDialog.STYLE_SPINNER);
-			dialogMine.setTitle("��ȴ�...");
-			dialogMine.setMessage("���ڻ�ȡ������Ϣ�б?���Ժ�...");
+			dialogMine.setTitle("请等待...");
+			dialogMine.setMessage("正在获取称重信息列表，请稍后...");
 			dialogMine.setIcon(R.drawable.ic);
 			dialogMine.setCancelable(true);
 			dialogMine.setIndeterminate(false);
@@ -315,7 +314,7 @@ public class SearchResultActivity extends Activity {
 				R.id.linear_item_RubbishSourceName, R.id.linear_item_JingZhong });
 		weightListView.setAdapter(mSimpleAdapter);
 		currentpage.setText(mPagerCurrent + "/" + mPagerCount);
-		statistic.setText("\t�ϼƣ�\t" + mCarCount + "��\t\t" + mAllNet + "��");
+		statistic.setText("\t共\t" + mCarCount + "车次,\t\t" + mAllNet + "公斤.");
 
 		prevpage.setEnabled(true);
 		firstpage.setEnabled(true);
@@ -336,8 +335,8 @@ public class SearchResultActivity extends Activity {
 	private void showCarDetailUI() {
 		SimpleAdapter showCarDetailAdapter = new SimpleAdapter(SearchResultActivity.this, mDataCurrent, R.layout.car_list_item_current, new String[] { "Label",
 				"Content" }, new int[] { R.id.linear_item_Label, R.id.linear_item_Content });
-		AlertDialog.Builder builder = new AlertDialog.Builder(this).setTitle("��ϸ��Ϣ").setAdapter(showCarDetailAdapter, null);
-		builder.setPositiveButton("�ر�", new DialogInterface.OnClickListener() {
+		AlertDialog.Builder builder = new AlertDialog.Builder(this).setTitle("详细信息").setAdapter(showCarDetailAdapter, null);
+		builder.setPositiveButton("关闭", new DialogInterface.OnClickListener() {
 			public void onClick(DialogInterface dialog, int whichButton) {
 			}
 		});

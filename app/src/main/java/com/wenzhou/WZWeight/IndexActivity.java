@@ -1,40 +1,13 @@
 package com.wenzhou.WZWeight;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import org.apache.http.NameValuePair;
-import org.apache.http.message.BasicNameValuePair;
-import org.json.JSONException;
-import org.json.JSONObject;
-
 import android.app.Activity;
 import android.app.AlertDialog;
-import android.app.ProgressDialog;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.net.ConnectivityManager;
-import android.net.NetworkInfo.State;
-import android.os.AsyncTask;
 import android.os.Bundle;
-import android.provider.Settings;
-import android.text.method.PasswordTransformationMethod;
-import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
-import android.view.View.OnClickListener;
-import android.view.View.OnKeyListener;
 import android.view.Window;
-import android.widget.Button;
-import android.widget.CheckBox;
-import android.widget.EditText;
-import android.widget.Toast;
-
-import com.wenzhou.WZWeight.R;
-import com.wenzhou.WZWeight.application.Constant;
-import com.wenzhou.WZWeight.application.HttpClientUtil;
-import com.wenzhou.WZWeight.log.MyLog;
 
 public class IndexActivity extends Activity {
 	private View search;
@@ -89,16 +62,16 @@ public class IndexActivity extends Activity {
 	@Override
 	public boolean onKeyDown(int keyCode, KeyEvent event) {
 		if (keyCode == KeyEvent.KEYCODE_BACK) {
-
+			// 创建退出对话框
 			AlertDialog isExit = new AlertDialog.Builder(this).create();
-
-			isExit.setTitle("ϵͳ��ʾ");
-
-			isExit.setMessage("ȷ��Ҫ�˳���");
-
-			isExit.setButton("ȷ��", listener);
-			isExit.setButton2("ȡ��", listener);
-
+			// 设置对话框标题
+			isExit.setTitle("系统提示");
+			// 设置对话框消息
+			isExit.setMessage("确定要退出吗? ");
+			// 添加选择按钮并注册监听
+			isExit.setButton("确定", listener);
+			isExit.setButton2("取消", listener);
+			// 显示对话框
 			isExit.show();
 		}
 		return false;

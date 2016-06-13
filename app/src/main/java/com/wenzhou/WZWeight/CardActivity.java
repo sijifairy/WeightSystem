@@ -1,17 +1,5 @@
 package com.wenzhou.WZWeight;
 
-import java.lang.reflect.Field;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-import org.apache.http.NameValuePair;
-import org.apache.http.message.BasicNameValuePair;
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
@@ -22,6 +10,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.ContextMenu;
+import android.view.ContextMenu.ContextMenuInfo;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
@@ -30,21 +19,29 @@ import android.view.View.OnCreateContextMenuListener;
 import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
-import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.view.ContextMenu.ContextMenuInfo;
 
-import com.wenzhou.WZWeight.CarActivity.DeleteCarTask;
 import com.wenzhou.WZWeight.application.Constant;
 import com.wenzhou.WZWeight.application.HttpClientUtil;
 import com.wenzhou.WZWeight.log.MyLog;
+
+import org.apache.http.NameValuePair;
+import org.apache.http.message.BasicNameValuePair;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.lang.reflect.Field;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class CardActivity extends Activity {
 	private static final String TAG = "Activity_car";
@@ -155,7 +152,7 @@ public class CardActivity extends Activity {
 			public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 				mDataCurrent = new ArrayList<Map<String, Object>>();
 				Map<String, Object> current = mData.get(position);
-				String[] labels = { "IC������", "���ƺ�", "�Ա��", "���õذ�վ", "IC����Ч��" };
+				String[] labels = { "IC卡卡号", "车牌号", "车辆编号", "适用地磅站", "IC卡有效期" };
 				String[] contents = { "CardNo", "PlateNo", "CarNo", "PoundName", "CardTimeEnd" };
 
 				for (int i = 0; i < labels.length; i++) {
@@ -172,9 +169,9 @@ public class CardActivity extends Activity {
 			cardListView.setOnCreateContextMenuListener(new OnCreateContextMenuListener() {
 				@Override
 				public void onCreateContextMenu(ContextMenu menu, View v, ContextMenuInfo menuInfo) {
-					menu.add(0, 0, 0, "�½�IC��");
-					menu.add(0, 1, 0, "�޸�IC��");
-					menu.add(0, 2, 0, "ɾ��IC��");
+					menu.add(0, 0, 0, "新建IC卡");
+					menu.add(0, 1, 0, "修改IC卡");
+					menu.add(0, 2, 0, "删除IC卡");
 				}
 			});
 		}
@@ -237,13 +234,13 @@ public class CardActivity extends Activity {
 
 			if (cardid != "") {
 				operatingCardID = cardid;
-				AlertDialog.Builder builder = new AlertDialog.Builder(this).setTitle("��ϸ��Ϣ").setMessage("ȷ��ɾ���IC��?");
-				builder.setPositiveButton("ȷ��", new DialogInterface.OnClickListener() {
+				AlertDialog.Builder builder = new AlertDialog.Builder(this).setTitle("详细信息").setMessage("确定删除该IC卡?");
+				builder.setPositiveButton("确认", new DialogInterface.OnClickListener() {
 					public void onClick(DialogInterface dialog, int whichButton) {
 						new DeleteCardTask().execute(Constant.serverUrl + Constant.deletecard);
 					}
 				});
-				builder.setNegativeButton("ȡ��", new DialogInterface.OnClickListener() {
+				builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
 					public void onClick(DialogInterface dialog, int whichButton) {
 					}
 				});
@@ -265,8 +262,8 @@ public class CardActivity extends Activity {
 			super.onPreExecute();
 			dialogMine = new ProgressDialog(CardActivity.this);
 			dialogMine.setProgressStyle(ProgressDialog.STYLE_SPINNER);
-			dialogMine.setTitle("��ȴ�...");
-			dialogMine.setMessage("���ڻ�ȡIC���б?���Ժ�...");
+			dialogMine.setTitle("请等待...");
+			dialogMine.setMessage("正在获取IC卡列表，请稍后...");
 			dialogMine.setIcon(R.drawable.ic);
 			dialogMine.setCancelable(true);
 			dialogMine.setIndeterminate(false);
@@ -349,7 +346,7 @@ public class CardActivity extends Activity {
 						tablejson = tablejson.replaceAll("\\\"", "\"");
 						JSONArray resultJson = new JSONArray(tablejson);
 						mRegionData = new ArrayList<SpinnerData>();
-						mRegionData.add(new SpinnerData("", "ȫ��"));
+						mRegionData.add(new SpinnerData("", "全部"));
 						for (int i = 0; i < resultJson.length(); i++) {
 							SpinnerData tmp = new SpinnerData(((JSONObject) resultJson.get(i)).getString("ID"),
 									((JSONObject) resultJson.get(i)).getString("RegionName"));
@@ -423,7 +420,7 @@ public class CardActivity extends Activity {
 		protected void onPostExecute(Boolean result) {
 			super.onPostExecute(result);
 			if (result) {
-				Toast.makeText(CardActivity.this, "ɾ��IC���ɹ���", Toast.LENGTH_SHORT).show();
+				Toast.makeText(CardActivity.this, "删除IC卡成功！", Toast.LENGTH_SHORT).show();
 				new GetCardDetailTask().execute(Constant.serverUrl + Constant.getcarddetail);
 			}
 		}
@@ -455,8 +452,8 @@ public class CardActivity extends Activity {
 	private void showCarDetailUI() {
 		SimpleAdapter showCarDetailAdapter = new SimpleAdapter(CardActivity.this, mDataCurrent, R.layout.card_list_item_current, new String[] { "Label",
 				"Content" }, new int[] { R.id.linear_item_Label, R.id.linear_item_Content });
-		AlertDialog.Builder builder = new AlertDialog.Builder(this).setTitle("��ϸ��Ϣ").setAdapter(showCarDetailAdapter, null);
-		builder.setPositiveButton("�ر�", new DialogInterface.OnClickListener() {
+		AlertDialog.Builder builder = new AlertDialog.Builder(this).setTitle("详细信息").setAdapter(showCarDetailAdapter, null);
+		builder.setPositiveButton("确认", new DialogInterface.OnClickListener() {
 			public void onClick(DialogInterface dialog, int whichButton) {
 			}
 		});
@@ -481,9 +478,9 @@ public class CardActivity extends Activity {
 
 		final AlertDialog.Builder builder = new AlertDialog.Builder(context);
 		builder.setCancelable(false);
-		builder.setTitle("IC����ѯ");
+		builder.setTitle("IC卡查询");
 		builder.setView(cardSearchView);
-		builder.setPositiveButton("ȷ��", new DialogInterface.OnClickListener() {
+		builder.setPositiveButton("确认", new DialogInterface.OnClickListener() {
 			public void onClick(DialogInterface dialog, int whichButton) {
 				try {
 					getSharedPreferences("constant", Context.MODE_PRIVATE).edit().putString("cardfilter_plateno", platenoInput.getText().toString()).commit();
@@ -499,7 +496,7 @@ public class CardActivity extends Activity {
 				}
 			}
 		});
-		builder.setNeutralButton("���", new DialogInterface.OnClickListener() {
+		builder.setNeutralButton("清空", new DialogInterface.OnClickListener() {
 			public void onClick(DialogInterface dialog, int whichButton) {
 				try {
 					getSharedPreferences("constant", Context.MODE_PRIVATE).edit().putString("cardfilter_plateno", "").commit();
@@ -515,7 +512,7 @@ public class CardActivity extends Activity {
 				}
 			}
 		});
-		builder.setNegativeButton("ȡ��", new DialogInterface.OnClickListener() {
+		builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
 			public void onClick(DialogInterface dialog, int whichButton) {
 				try {
 					Field field = dialog.getClass().getSuperclass().getDeclaredField("mShowing");

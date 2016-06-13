@@ -1,18 +1,5 @@
 package com.wenzhou.WZWeight;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
-import org.apache.http.HttpResponse;
-import org.apache.http.client.methods.HttpPost;
-import org.apache.http.entity.StringEntity;
-import org.apache.http.impl.client.DefaultHttpClient;
-import org.apache.http.params.CoreConnectionPNames;
-import org.apache.http.protocol.HTTP;
-import org.apache.http.util.EntityUtils;
-import org.json.JSONException;
-import org.json.JSONObject;
-
 import android.app.Activity;
 import android.content.ContentValues;
 import android.content.Context;
@@ -33,11 +20,23 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.wenzhou.WZWeight.R;
 import com.wenzhou.WZWeight.application.Constant;
 import com.wenzhou.WZWeight.log.MyLog;
 import com.wenzhou.WZWeight.sqlite.DataBaseAdapter;
 import com.wenzhou.WZWeight.sqlite.InfoColumn;
+
+import org.apache.http.HttpResponse;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.entity.StringEntity;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.params.CoreConnectionPNames;
+import org.apache.http.protocol.HTTP;
+import org.apache.http.util.EntityUtils;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class CheckSingleActivity extends Activity {
 	private static final String TAG = "Activity_check_single";

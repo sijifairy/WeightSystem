@@ -1,13 +1,13 @@
 package com.wenzhou.WZWeight.service;
 
-import java.util.List;
-
 import android.app.ActivityManager;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 
 import com.wenzhou.WZWeight.log.MyLog;
+
+import java.util.List;
 
 public class RootReceiver extends BroadcastReceiver {
 	private static final String TAG = "RootReceiver";

@@ -1,17 +1,5 @@
 package com.wenzhou.WZWeight.service;
 
-import java.util.Timer;
-import java.util.TimerTask;
-
-import org.apache.http.HttpResponse;
-import org.apache.http.client.methods.HttpPost;
-import org.apache.http.entity.StringEntity;
-import org.apache.http.impl.client.DefaultHttpClient;
-import org.apache.http.params.CoreConnectionPNames;
-import org.apache.http.util.EntityUtils;
-import org.json.JSONException;
-import org.json.JSONObject;
-
 import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
@@ -23,11 +11,23 @@ import android.net.NetworkInfo.State;
 import android.os.IBinder;
 import android.provider.Settings;
 
-import com.wenzhou.WZWeight.R;
 import com.wenzhou.WZWeight.LoginActivity;
+import com.wenzhou.WZWeight.R;
 import com.wenzhou.WZWeight.ShowActivity;
 import com.wenzhou.WZWeight.application.Constant;
 import com.wenzhou.WZWeight.log.MyLog;
+
+import org.apache.http.HttpResponse;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.entity.StringEntity;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.params.CoreConnectionPNames;
+import org.apache.http.util.EntityUtils;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class MyService extends Service {
 	Timer timer;

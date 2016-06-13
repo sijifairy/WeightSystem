@@ -1,11 +1,5 @@
 package com.wenzhou.WZWeight.adapter;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-
-import com.wenzhou.WZWeight.R;
-
 import android.app.Activity;
 import android.content.Context;
 import android.graphics.Color;
@@ -16,6 +10,12 @@ import android.view.ViewGroup;
 import android.widget.AbsListView;
 import android.widget.BaseExpandableListAdapter;
 import android.widget.TextView;
+
+import com.wenzhou.WZWeight.R;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 
 public class ExpandableAdapterFromme extends BaseExpandableListAdapter {
 	Activity activity;

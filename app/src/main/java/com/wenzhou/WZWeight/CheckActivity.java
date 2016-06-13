@@ -1,24 +1,6 @@
 package com.wenzhou.WZWeight;
 
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-import org.apache.http.HttpResponse;
-import org.apache.http.client.methods.HttpPost;
-import org.apache.http.entity.StringEntity;
-import org.apache.http.impl.client.DefaultHttpClient;
-import org.apache.http.params.CoreConnectionPNames;
-import org.apache.http.util.EntityUtils;
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
 import android.app.Activity;
-import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.ContentValues;
 import android.content.Context;
@@ -43,15 +25,31 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.wenzhou.WZWeight.R;
-import com.wenzhou.WZWeight.widget.NewDataToastButtom;
-import com.wenzhou.WZWeight.widget.NewDataToastTop;
-import com.wenzhou.WZWeight.widget.PullToRefreshListView;
 import com.wenzhou.WZWeight.adapter.ExpandableAdapterFromme;
 import com.wenzhou.WZWeight.application.Constant;
 import com.wenzhou.WZWeight.log.MyLog;
 import com.wenzhou.WZWeight.sqlite.DataBaseAdapter;
 import com.wenzhou.WZWeight.sqlite.InfoColumn;
+import com.wenzhou.WZWeight.widget.NewDataToastButtom;
+import com.wenzhou.WZWeight.widget.NewDataToastTop;
+import com.wenzhou.WZWeight.widget.PullToRefreshListView;
+
+import org.apache.http.HttpResponse;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.entity.StringEntity;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.params.CoreConnectionPNames;
+import org.apache.http.util.EntityUtils;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class CheckActivity extends Activity {
 	private static final String TAG = "Activity_check";

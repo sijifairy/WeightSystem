@@ -1,6 +1,5 @@
 package com.wenzhou.WZWeight.widget;
 
-import com.wenzhou.WZWeight.R;
 import android.content.Context;
 import android.media.MediaPlayer;
 import android.util.DisplayMetrics;
@@ -9,6 +8,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.wenzhou.WZWeight.R;
 
 public class NewDataToastButtom extends Toast {
 
