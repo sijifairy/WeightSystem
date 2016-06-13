@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/white" >
+
+    <!-- Top "垃圾计量系统" -->
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="60dp"
+        android:background="@color/login_title_backColor"
+        android:gravity="center" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/loadSystem"
+            android:textColor="#FFFFFF"
+            android:textSize="28sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginTop="60dp"
+        android:background="@drawable/index_background"
+        android:gravity="bottom" 
+        android:orientation="vertical">
+		<!-- 数据查询 -->
+        <LinearLayout
+        	android:id="@+id/linear_search"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" 
+            android:background="@drawable/linearlayout_selector">
+
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="65dp"
+                android:contentDescription="@string/image_login_user_desc"
+                android:gravity="right"
+                android:paddingLeft="30dp"
+                android:scaleType="center"
+                android:src="@drawable/menua1" >
+            </ImageView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="65dp"
+                android:drawableRight="@drawable/enter"
+                android:gravity="center_vertical"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:text="数据查询"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+        </LinearLayout>
+        <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="#9a9a9a" />
+        <!-- IC卡管理-->
+        <LinearLayout
+        	android:id="@+id/linear_card"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" 
+            android:background="@drawable/linearlayout_selector">
+
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="65dp"
+                android:contentDescription="@string/image_login_user_desc"
+                android:gravity="right"
+                android:paddingLeft="30dp"
+                android:scaleType="center"
+                android:src="@drawable/menub1" >
+            </ImageView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="65dp"
+                android:drawableRight="@drawable/enter"
+                android:gravity="center_vertical"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:text="IC卡管理"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+        </LinearLayout>
+        <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="#9a9a9a" />
+        <!-- 车辆管理-->
+        <LinearLayout
+        	android:id="@+id/linear_car"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" 
+            android:background="@drawable/linearlayout_selector">
+
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="65dp"
+                android:contentDescription="@string/image_login_user_desc"
+                android:gravity="right"
+                android:paddingLeft="30dp"
+                android:scaleType="center"
+                android:src="@drawable/menuc1" >
+            </ImageView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="65dp"
+                android:drawableRight="@drawable/enter"
+                android:gravity="center_vertical"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:text="车辆管理"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+        </LinearLayout>
+        <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="#9a9a9a" />
+        <!-- 系统管理-->
+        <LinearLayout
+        	android:id="@+id/linear_tool"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" 
+            android:background="@drawable/linearlayout_selector">
+
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="65dp"
+                android:contentDescription="@string/image_login_user_desc"
+                android:gravity="right"
+                android:paddingLeft="30dp"
+                android:scaleType="center"
+                android:src="@drawable/menud1" >
+            </ImageView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="65dp"
+               android:drawableRight="@drawable/enter"
+                android:gravity="center_vertical"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:text="系统管理"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+</FrameLayout>

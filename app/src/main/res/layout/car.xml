@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:background="@color/white">
+
+	<LinearLayout
+		android:layout_width="fill_parent"
+		android:layout_height="60dp"
+		android:background="@color/login_title_backColor"
+		android:gravity="center">
+
+		<TextView
+			android:id="@+id/tool_textview_top"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:text="车辆管理"
+			android:gravity="center"
+			android:textColor="#FFFFFF"
+			android:textSize="28sp" />
+	</LinearLayout>
+	<LinearLayout
+		android:layout_width="fill_parent"
+		android:layout_height="60dp"
+		android:gravity="left">
+		<ImageView
+			android:id="@+id/linear_imageview_back"
+			android:layout_width="80dp"
+			android:layout_height="65dp"
+			android:paddingRight="27dp"
+			android:contentDescription="@string/image_login_user_desc"
+			android:scaleType="center"
+			android:src="@drawable/back">
+		</ImageView>
+	</LinearLayout>
+	<LinearLayout
+		android:layout_width="fill_parent"
+		android:layout_height="60dp"
+		android:gravity="right">
+		<ImageView
+			android:id="@+id/linear_imageview_search"
+			android:layout_width="50dp"
+			android:layout_height="65dp"
+			android:contentDescription="@string/image_login_user_desc"
+			android:scaleType="center"
+			android:src="@drawable/search">
+		</ImageView>
+	</LinearLayout>
+	<ListView
+		android:id="@+id/lv"
+		android:layout_width="fill_parent"
+		android:layout_height="fill_parent"
+		android:layout_marginTop="60dp"
+		android:layout_marginBottom="50dp" />
+
+	<LinearLayout
+	    android:layout_width="fill_parent"
+	    android:layout_height="fill_parent"
+	    android:gravity="bottom">
+
+	    <LinearLayout
+	        android:layout_width="match_parent"
+	        android:layout_height="50dp"
+	        android:gravity="center" 
+	        android:background="#efefef">
+
+	        <Button
+	            android:id="@+id/button_StartPage"
+	            android:layout_width="60dip"
+	            android:layout_height="27dip"
+	            android:background="@drawable/round_button_selector"
+	            android:gravity="center"
+	            android:text="首页"
+	            android:textColor="@color/white"
+	            android:textSize="14sp" />
+
+	        <Button
+	            android:id="@+id/button_PrevPage"
+	            android:layout_width="60dip"
+	            android:layout_height="27dip"
+	            android:layout_marginLeft="5dp"
+	            android:background="@drawable/round_button_selector"
+	            android:gravity="center"
+	            android:text="上一页"
+	            android:textColor="@color/white"
+	            android:textSize="14sp" />
+
+	        <TextView
+	            android:id="@+id/currentPage"
+	            android:layout_width="60dip"
+	            android:layout_height="27dip"
+	            android:layout_marginLeft="5dp"
+	            android:layout_marginRight="5dp"
+	            android:gravity="center"
+	            android:text="1/1"
+	            android:textSize="14sp" />
+
+	        <Button
+	            android:id="@+id/button_NextPage"
+	            android:layout_width="60dip"
+	            android:layout_height="27dip"
+	            android:layout_marginRight="5dp"
+	            android:background="@drawable/round_button_selector"
+	            android:gravity="center"
+	            android:text="下一页"
+	            android:textColor="@color/white"
+	            android:textSize="14sp" />
+
+	        <Button
+	            android:id="@+id/button_LastPage"
+	            android:layout_width="60dip"
+	            android:layout_height="27dip"
+	            android:background="@drawable/round_button_selector"
+	            android:gravity="center"
+	            android:text="末页"
+	            android:textColor="@color/white"
+	            android:textSize="14sp" />
+	    </LinearLayout>
+	</LinearLayout>
+
+</FrameLayout>

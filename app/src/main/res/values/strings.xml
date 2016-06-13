@@ -1,0 +1,56 @@
+<resources>
+
+    <string name="app_name">垃圾计量系统</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="menu_settings">Settings</string>
+    <string name="title_activity_activity_load">垃圾计量系统</string>
+    <string name="username_load">请输入用户名</string>
+    <string name="username">用户名:</string>
+    <string name="password">密码：</string>
+    <string name="password_load">请输入密码</string>
+    <string name="load">进入系统</string>
+    <string name="title">垃圾计量系统</string>
+    <string name="splashview">欢迎</string>
+    <string name="newTask">安排新任务</string>
+    <string name="taskDetail">任务明细</string>
+    <string name="taskCheck">验收任务</string>
+    <string name="task_type">选择任务类型</string>
+    <string name="startTime">选择起始日期</string>
+    <string name="overtime">选择结束日期</string>
+    <string name="sender">任务分派人</string>
+    <string name="senderlinear">任务分派人</string>
+    <string name="user">分派给</string>
+    <string name="deadline">任务截止日期</string>
+    <string name="cycle">任务周期(天)</string>
+    <string name="taskTitle">任务标题</string>
+    <string name="memo">任务内容</string>
+    <string name="sms">是否发送短信</string>
+    <string name="update_user">更新用户</string>
+    <string name="chooseDate">选择日期</string>
+    <string name="sendDate">任务派发时间</string>
+    <string name="accept">接收任务人员</string>
+    <string name="loadSystem">垃圾计量系统</string>
+    <string name="relese">发布任务</string>
+    <string name="exit">退出</string>
+    <string name="change">修改任务</string>
+    <string name="delete">删除任务</string>
+    <string name="check">验收任务</string>
+    <string name="check_ontime">按时验收</string>
+    <string name="refresh">刷新任务</string>
+    <string name="search">检索数据</string>
+    <string name="back">返回任务列表</string>
+    <string name="netDialog">网络状态提示</string>
+    <string name="netMessage">当前网络不可用</string>
+    <string name="netSetting">设置网络</string>
+    <string name="netExit">退出应用</string>
+    <string name="chooseuser">选择用户</string>
+    <string name="pull_to_refresh_pull_label">下拉可以刷新</string>
+    <string name="pull_to_refresh_release_label">松开可以刷新</string>
+    <string name="pull_to_refresh_refreshing_label">加载中...</string>
+    <string name="pull_to_refresh_tap_label">下拉可以刷新</string>
+    <string name="pull_to_refresh_update">最近更新：</string>
+    <string name="login_rememberpwd">记住密码</string>
+    <string name="login_button">登 录</string>
+    <string name="image_login_user_desc">image_login_user_desc</string>
+
+</resources>

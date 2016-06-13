@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.wenzhou.WZWeight"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk android:minSdkVersion="9" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+ 	<uses-permission android:name="android.permission.CALL_PHONE"/>
+ 	
+    <application
+        android:name="com.wenzhou.WZWeight.application.OATask"
+        android:icon="@drawable/icnew"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <receiver android:name="com.wenzhou.WZWeight.service.RootReceiver" >
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+
+        <activity
+            android:name="com.wenzhou.WZWeight.LoginActivity"
+            android:label="@string/title_activity_activity_load"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.wenzhou.WZWeight.ExpandListDemo"
+            android:label="@string/title_activity_activity_load" >
+        </activity>
+        <activity android:name="com.wenzhou.WZWeight.ShowActivity" >
+        </activity>
+        <activity android:name="com.wenzhou.WZWeight.ShowSingleActivity" >
+        </activity>
+        <activity android:name="com.wenzhou.WZWeight.CheckActivity" >
+        </activity>
+        <activity android:name="com.wenzhou.WZWeight.CheckSingleActivity" >
+        </activity>
+
+        <service android:name="com.wenzhou.WZWeight.service.MyService" >
+            <intent-filter>
+                <action android:name="com.ningbo.OATask.myservice" />
+
+                <category android:name="android.intent.category.default" />
+            </intent-filter>
+        </service>
+
+        <activity
+            android:name="com.wenzhou.WZWeight.IndexActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.wenzhou.WZWeight.ToolActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.wenzhou.WZWeight.SearchActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.wenzhou.WZWeight.CarActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.wenzhou.WZWeight.CardActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.wenzhou.WZWeight.CarEditActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.wenzhou.WZWeight.SearchResultActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.wenzhou.WZWeight.CardEditActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+    </application>
+
+</manifest>

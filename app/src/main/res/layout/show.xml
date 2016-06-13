@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TabHost xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@android:id/tabhost"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/bgnew" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <TabWidget
+            android:id="@android:id/tabs"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" />
+
+        <FrameLayout
+            android:id="@android:id/tabcontent"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" >
+
+            <RelativeLayout
+                android:id="@+id/relativelayout_mine"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" >
+
+                <Spinner
+                    android:id="@+id/spinner_show1"
+                    android:layout_width="188dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentTop="true"
+                    android:textColor="#006400" />
+
+                <TextView
+                    android:id="@+id/textView_show1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@id/spinner_show1"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginBottom="15dp"
+                    android:layout_marginLeft="18dp"
+                    android:text="@string/task_type" />
+
+                <EditText
+                    android:id="@+id/editText_show1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@id/spinner_show1"
+                    android:focusable="false"
+                    android:hint="任务结束日期" />
+
+                <Button
+                    android:id="@+id/button_show1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@id/editText_show1"
+                    android:layout_alignBottom="@id/editText_show1"
+                    android:layout_toRightOf="@id/editText_show1"
+                    android:text="@string/startTime"
+                    android:textColor="#DC143C" />
+
+                <EditText
+                    android:id="@+id/editText_show2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@+id/button_show1"
+                    android:focusable="false"
+                    android:hint="任务结束日期" />
+
+                <Button
+                    android:id="@+id/button_show2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@id/editText_show2"
+                    android:layout_alignBottom="@id/editText_show2"
+                    android:layout_alignLeft="@id/button_show1"
+                    android:text="@string/overtime"
+                    android:textColor="#DC143C" />
+
+                <com.wenzhou.WZWeight.widget.PullToRefreshListView
+                    android:id="@+id/listView_show1"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_below="@id/button_show2"
+                    android:divider="#00000000"
+                    android:dividerHeight="1dp" />
+
+                <Button
+                    android:id="@+id/button_show3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="70dp"
+                    android:text="@string/search"
+                    android:textColor="#DC143C" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/relativelayout_tome"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" >
+
+                <Spinner
+                    android:id="@+id/spinner_tome1"
+                    android:layout_width="188dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentTop="true"
+                    android:textColor="#006400" />
+
+                <TextView
+                    android:id="@+id/textView_tome1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@id/spinner_tome1"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginBottom="15dp"
+                    android:layout_marginLeft="18dp"
+                    android:text="@string/task_type" />
+
+                <EditText
+                    android:id="@+id/editText_tome1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@id/spinner_tome1"
+                    android:focusable="false"
+                    android:hint="任务结束日期" />
+
+                <Button
+                    android:id="@+id/button_tome1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@id/editText_tome1"
+                    android:layout_alignBottom="@id/editText_tome1"
+                    android:layout_toRightOf="@id/editText_tome1"
+                    android:text="@string/startTime"
+                    android:textColor="#DC143C" />
+
+                <EditText
+                    android:id="@+id/editText_tome2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@id/button_tome1"
+                    android:focusable="false"
+                    android:hint="任务结束日期" />
+
+                <Button
+                    android:id="@+id/button_tome2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@id/editText_tome2"
+                    android:layout_alignBottom="@id/editText_tome2"
+                    android:layout_alignLeft="@id/button_tome1"
+                    android:text="@string/overtime"
+                    android:textColor="#DC143C" />
+
+                <com.wenzhou.WZWeight.widget.PullToRefreshListView
+                    android:id="@+id/listView_tome1"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@id/button_tome2"
+                    android:divider="#00000000"
+                    android:dividerHeight="1dp" />
+
+                <Button
+                    android:id="@+id/button_tome3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="70dp"
+                    android:divider="#00000000"
+                    android:dividerHeight="1dp"
+                    android:text="@string/search"
+                    android:textColor="#DC143C" />
+            </RelativeLayout>
+        </FrameLayout>
+    </LinearLayout>
+
+</TabHost>

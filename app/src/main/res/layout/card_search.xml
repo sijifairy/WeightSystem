@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:stretchColumns="1"
+	android:background="@color/white">
+	<TableRow android:layout_marginTop="5dp">
+		<TextView
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:text="IC卡卡号"
+			android:paddingLeft="5dp"
+			android:textSize="14sp"
+			android:textColor="@color/gray" />
+		<EditText
+			android:id="@+id/linear_carsearch_CardNo"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:selectAllOnFocus="true"
+			android:textSize="14sp"
+			android:hint="" />
+	</TableRow>
+
+	<TableRow android:layout_marginTop="5dp">
+		<TextView
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:text="车牌号      "
+			android:paddingLeft="5dp"
+			android:textColor="@color/gray"
+			android:textSize="14sp" />
+		<EditText
+			android:id="@+id/linear_carsearch_PlateNo"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:selectAllOnFocus="true"
+			android:textSize="14sp"
+			android:hint="" />
+	</TableRow>
+	
+	<TableRow android:layout_marginTop="5dp">
+		<TextView
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:text="自编号      "
+			android:paddingLeft="5dp"
+			android:textColor="@color/gray"
+			android:textSize="14sp" />
+		<EditText
+			android:id="@+id/linear_carsearch_CarNo"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:selectAllOnFocus="true"
+			android:textSize="14sp"
+			android:hint="" />
+	</TableRow>
+</TableLayout>

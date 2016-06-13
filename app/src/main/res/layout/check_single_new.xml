@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/bgnew" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="top"
+        android:orientation="vertical"
+        android:paddingTop="25dp" >
+
+        <LinearLayout
+            android:id="@+id/linear_check_single_1"
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:layout_margin="10dp"
+            android:gravity="center" >
+
+            <TextView
+                android:id="@+id/textView_check_single20"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="任务明细"
+                android:textColor="#C71585"
+                android:textSize="30dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linear_check_single_2"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp" >
+
+            <TextView
+                android:id="@+id/textView_check_single1"
+                android:layout_width="95dp"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:text="@string/sender" />
+
+            <TextView
+                android:id="@+id/textView_check_single_sender"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="TextView"
+                android:textColor="#C71585"
+                android:textSize="18dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linear_check_single_3"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp" >
+
+            <TextView
+                android:id="@+id/textView_check_single2"
+                android:layout_width="95dp"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:text="@string/sendDate" />
+
+            <TextView
+                android:id="@+id/textView_check_single_date"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="TextView"
+                android:textColor="#C71585"
+                android:textSize="18dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linear_check_single_4"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp" >
+
+            <TextView
+                android:id="@+id/textView_check_single3"
+                android:layout_width="95dp"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:text="@string/accept" />
+
+            <TextView
+                android:id="@+id/textView_check_single_user"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="TextView"
+                android:textColor="#C71585"
+                android:textSize="18dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linear_check_single_5"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp" >
+
+            <TextView
+                android:id="@+id/TextView_check02"
+                android:layout_width="95dp"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:text="@string/deadline" />
+
+            <TextView
+                android:id="@+id/textView_check_single_deadline"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="TextView"
+                android:textColor="#C71585"
+                android:textSize="18dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linear_check_single_6"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp" >
+
+            <TextView
+                android:id="@+id/TextView_check01"
+                android:layout_width="95dp"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:text="剩余天数" />
+
+            <TextView
+                android:id="@+id/textView_check_single_cycle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="TextView"
+                android:textColor="#C71585"
+                android:textSize="18dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linear_check_single_7"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/TextView_check03"
+                android:layout_width="95dp"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:text="@string/taskTitle" />
+
+            <TextView
+                android:id="@+id/textView_check_single_title"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="TextView"
+                android:textColor="#C71585"
+                android:textSize="18dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linear_check_single_8"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/TextView_check04"
+                android:layout_width="95dp"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:text="@string/memo" />
+
+            <TextView
+                android:id="@+id/textView_check_single_memo"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="TextView"
+                android:textColor="#C71585"
+                android:textSize="18dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linear_check_single_9"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:gravity="center" >
+
+            <ProgressBar
+                android:id="@+id/progressBar1"
+                style="?android:attr/progressBarStyleLarge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone" />
+        </LinearLayout>
+    </LinearLayout>
+
+</ScrollView>

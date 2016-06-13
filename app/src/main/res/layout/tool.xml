@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/white" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="60dp"
+        android:background="@color/login_title_backColor"
+        android:gravity="center" >
+
+        <TextView
+            android:id="@+id/tool_textview_top"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="系统管理"
+            android:gravity="center"
+            android:textColor="#FFFFFF"
+            android:background="@drawable/back_background"
+            android:textSize="28sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginTop="60dp"
+        android:background="@drawable/tool_background"
+        android:gravity="top"
+        android:paddingTop="105dp"
+        android:orientation="vertical">
+		<!-- 联系我们 -->
+        <LinearLayout
+        	android:id="@+id/linear_contact"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" 
+            android:background="@drawable/linearlayout_selector">
+
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="65dp"
+                android:contentDescription="@string/image_login_user_desc"
+                android:gravity="right"
+                android:paddingLeft="30dp"
+                android:scaleType="center"
+                android:src="@drawable/contact" >
+            </ImageView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="65dp"
+                android:drawableRight="@drawable/enter"
+                android:gravity="center_vertical"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:text="联系我们"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+        </LinearLayout>
+        <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="#9a9a9a" />
+        <!-- 检查更新-->
+        <LinearLayout
+        	android:id="@+id/linear_update"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" 
+            android:background="@drawable/linearlayout_selector">
+
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="65dp"
+                android:contentDescription="@string/image_login_user_desc"
+                android:gravity="right"
+                android:paddingLeft="30dp"
+                android:scaleType="center"
+                android:src="@drawable/check" >
+            </ImageView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="65dp"
+                android:drawableRight="@drawable/enter"
+                android:gravity="center_vertical"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:text="检查更新"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+        </LinearLayout>
+        <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="#9a9a9a" />
+        <!-- 系统报修-->
+        <LinearLayout
+        	android:id="@+id/linear_repair"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" 
+            android:background="@drawable/linearlayout_selector">
+
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="65dp"
+                android:contentDescription="@string/image_login_user_desc"
+                android:gravity="right"
+                android:paddingLeft="30dp"
+                android:scaleType="center"
+                android:src="@drawable/repair" >
+            </ImageView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="65dp"
+                android:drawableRight="@drawable/enter"
+                android:gravity="center_vertical"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:text="系统报修"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+        </LinearLayout>
+        <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="#9a9a9a" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginTop="60dp"
+        android:gravity="bottom" 
+        android:orientation="vertical"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp"
+        android:layout_marginBottom="30dp">
+        <Button
+            android:id="@+id/button_logout"
+            android:layout_width="fill_parent"
+            android:layout_height="45dp"
+            android:background="@drawable/round_button"
+            android:text="退 出 登 录"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+        </LinearLayout>
+</FrameLayout>

@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bgnew"
+    android:gravity="center"
+    android:orientation="vertical" >
+
+    <!-- Top "垃圾计量系统" -->
+
+    <LinearLayout
+        android:id="@+id/linear_load_title"
+        android:layout_width="fill_parent"
+        android:layout_height="60dp"
+        android:background="@color/login_title_backColor"
+        android:gravity="center" >
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/loadSystem"
+            android:textColor="#FFFFFF"
+            android:textSize="28sp" />
+    </LinearLayout>
+    <!-- Top "用户名" -->
+
+    <LinearLayout
+        android:id="@+id/linear_load_user"
+        android:layout_width="fill_parent"
+        android:layout_height="70dp"
+        android:layout_marginTop="60dp"
+        android:gravity="left" >
+
+        <ImageView
+            android:id="@+id/image_login_user"
+            android:layout_width="60dp"
+            android:layout_height="70dp"
+            android:contentDescription="@string/image_login_user_desc"
+            android:gravity="right"
+            android:paddingBottom="1dp"
+            android:paddingLeft="26dp"
+            android:paddingRight="10dp"
+            android:paddingTop="1dp"
+            android:scaleType="center"
+            android:src="@drawable/user1" >
+        </ImageView>
+
+        <EditText
+            android:id="@+id/editText_load1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@null"
+            android:hint="@string/username_load"
+            android:textColor="#9a9a9a"
+            android:textColorHint="#9a9a9a" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginTop="130dp"
+        android:background="#9a9a9a" />
+    <!-- Top "密码" -->
+
+    <LinearLayout
+        android:id="@+id/linear_load_password"
+        android:layout_width="fill_parent"
+        android:layout_height="70dp"
+        android:layout_marginTop="130dp"
+        android:gravity="left" >
+
+        <ImageView
+            android:id="@+id/image_login_psw"
+            android:layout_width="60dp"
+            android:layout_height="70dp"
+            android:contentDescription="@string/image_login_user_desc"
+            android:gravity="right"
+            android:paddingBottom="1dp"
+            android:paddingLeft="26dp"
+            android:paddingRight="10dp"
+            android:paddingTop="1dp"
+            android:scaleType="center"
+            android:src="@drawable/psw1" >
+        </ImageView>
+
+        <EditText
+            android:id="@+id/editText_load2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@null"
+            android:hint="@string/password_load"
+            android:inputType="textPassword"
+            android:textColor="#9a9a9a"
+            android:textColorHint="#9a9a9a" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginTop="200dp"
+        android:background="#9a9a9a" />
+    <!-- Top "記住密碼" -->
+
+    <LinearLayout
+        android:id="@+id/linear_load_rememberpwd"
+        android:layout_width="fill_parent"
+        android:layout_height="30dp"
+        android:layout_marginLeft="26dp"
+        android:layout_marginTop="215dp"
+        android:gravity="left" >
+
+        <CheckBox
+            android:id="@+id/check_login_rememberpwd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="@string/login_rememberpwd" >
+        </CheckBox>
+    </LinearLayout>
+    <!-- Top "登录" -->
+
+    <LinearLayout
+        android:id="@+id/linear_load_loginButton"
+        android:layout_width="fill_parent"
+        android:layout_height="45dp"
+        android:layout_marginLeft="35dp"
+        android:layout_marginRight="35dp"
+        android:layout_marginTop="275dp"
+        android:gravity="center" >
+
+        <Button
+            android:id="@+id/button1"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="@drawable/round_button"
+            android:text="@string/login_button"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+</FrameLayout>
