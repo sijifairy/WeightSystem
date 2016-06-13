@@ -109,7 +109,7 @@ public class ToolActivity extends Activity {
 			}
 		});
 		
-		new YesterdayWeightTask().execute(Constant.aboutus);
+		new YesterdayWeightTask().execute(Constant.serverUrl + Constant.aboutus);
 	}
 
 

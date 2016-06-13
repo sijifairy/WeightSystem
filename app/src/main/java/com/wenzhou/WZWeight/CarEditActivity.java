@@ -141,9 +141,9 @@ public class CarEditActivity extends Activity {
 					MyLog.e(TAG, e.getMessage());
 				}
 				if (type.equals("new")) {
-					new NewCarTask().execute(Constant.insertcar);
+					new NewCarTask().execute(Constant.serverUrl + Constant.insertcar);
 				} else if (type.equals("edit")) {
-					new EditCarTask().execute(Constant.editcar);
+					new EditCarTask().execute(Constant.serverUrl + Constant.editcar);
 				}
 			}
 		});
@@ -154,7 +154,7 @@ public class CarEditActivity extends Activity {
 			public void onItemSelected(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
 				operatingRegionID = mRegionData.get(arg2).getValue();
 				if (!firstTriggered) {
-					new GetRubbishSourceTask().execute(Constant.getrubbishsourceinfo);
+					new GetRubbishSourceTask().execute(Constant.serverUrl + Constant.getrubbishsourceinfo);
 				} else {
 					if (!isFirst) {
 						firstTriggered = false;
@@ -170,7 +170,7 @@ public class CarEditActivity extends Activity {
 
 		isFirst = true;
 		firstTriggered = true;
-		new GetRegionTask().execute(Constant.getregioninfo);
+		new GetRegionTask().execute(Constant.serverUrl + Constant.getregioninfo);
 	}
 
 
@@ -227,7 +227,7 @@ public class CarEditActivity extends Activity {
 					Map<String, Object> objCar = mData.get(0);
 					operatingRegionID = objCar.get("RegionID").toString();
 				}
-				new GetRubbishSourceTask().execute(Constant.getrubbishsourceinfo);
+				new GetRubbishSourceTask().execute(Constant.serverUrl + Constant.getrubbishsourceinfo);
 			} else {
 
 			}
@@ -418,9 +418,9 @@ public class CarEditActivity extends Activity {
 				BindSpinnerData(mRegionData, regionSpinner);
 				operatingRegionID = mRegionData.get(0).getValue();
 				if (type.equals("edit")) {
-					new GetCarDetailTask().execute(Constant.getcardetail);
+					new GetCarDetailTask().execute(Constant.serverUrl + Constant.getcardetail);
 				} else {
-					new GetRubbishSourceTask().execute(Constant.getrubbishsourceinfo);
+					new GetRubbishSourceTask().execute(Constant.serverUrl + Constant.getrubbishsourceinfo);
 				}
 			}
 		}
@@ -489,7 +489,7 @@ public class CarEditActivity extends Activity {
 			if (result) {
 				BindSpinnerData(mRubbishSourceData, rubbishsourceSpinner);
 				if (isFirst) {
-					new GetCarTypeTask().execute(Constant.getcartypeinfo);
+					new GetCarTypeTask().execute(Constant.serverUrl + Constant.getcartypeinfo);
 					isFirst = false;
 				} else {
 				}
@@ -558,7 +558,7 @@ public class CarEditActivity extends Activity {
 			super.onPostExecute(result);
 			if (result) {
 				BindSpinnerData(mCarTypeData, cartypeSpinner);
-				new GetDepartmentTask().execute(Constant.getclientinfo);
+				new GetDepartmentTask().execute(Constant.serverUrl + Constant.getclientinfo);
 			}
 		}
 	}
@@ -624,7 +624,7 @@ public class CarEditActivity extends Activity {
 			super.onPostExecute(result);
 			if (result) {
 				BindSpinnerData(mDepartmentData, departmentSpinner);
-				new GetRubbishTypeTask().execute(Constant.getrubbishtypeinfo);
+				new GetRubbishTypeTask().execute(Constant.serverUrl + Constant.getrubbishtypeinfo);
 			}
 		}
 	}

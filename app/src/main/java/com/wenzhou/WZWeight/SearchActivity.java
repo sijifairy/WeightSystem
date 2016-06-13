@@ -104,7 +104,7 @@ public class SearchActivity extends Activity {
 			@Override
 			public void onItemSelected(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
 				operatingRegionID = mRegionData.get(arg2).getValue();
-				new GetRubbishSourceTask().execute(Constant.getrubbishsourceinfo);
+				new GetRubbishSourceTask().execute(Constant.serverUrl + Constant.getrubbishsourceinfo);
 			}
 
 			@Override
@@ -177,7 +177,7 @@ public class SearchActivity extends Activity {
 			}
 		});
 		
-		new YesterdayWeightTask().execute(Constant.yesterdayweight);
+		new YesterdayWeightTask().execute(Constant.serverUrl + Constant.yesterdayweight);
 
 	}
 
@@ -268,7 +268,7 @@ public class SearchActivity extends Activity {
 							+ record.get("JingZhong").toString() + " ��\n\r");
 				}
 				yesterday_statistics.setText(str);
-				new GetRegionTask().execute(Constant.getregioninfo);
+				new GetRegionTask().execute(Constant.serverUrl + Constant.getregioninfo);
 			} else {
 
 			}
@@ -338,7 +338,7 @@ public class SearchActivity extends Activity {
 			if (result) {
 				BindSpinnerData(mRegionData, regionSpinner);
 				operatingRegionID = mRegionData.get(0).getValue();
-				new GetRubbishSourceTask().execute(Constant.getrubbishsourceinfo);
+				new GetRubbishSourceTask().execute(Constant.serverUrl + Constant.getrubbishsourceinfo);
 			}
 		}
 	}
@@ -410,7 +410,7 @@ public class SearchActivity extends Activity {
 			if (result) {
 
 				BindSpinnerData(mRubbishSourceData, rubbishsourceSpinner);
-				new GetPoundTask().execute(Constant.getpoundinfo);
+				new GetPoundTask().execute(Constant.serverUrl + Constant.getpoundinfo);
 			}
 		}
 	}

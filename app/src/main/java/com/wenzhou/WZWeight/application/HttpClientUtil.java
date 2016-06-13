@@ -18,74 +18,73 @@ import org.json.JSONObject;
 import com.wenzhou.WZWeight.log.MyLog;
 
 public class HttpClientUtil {
-	private static final String TAG = "HttpClientUtil";
+    private static final String TAG = "HttpClientUtil";
 
-	private String url;
-	private List<NameValuePair> params;
+    private String url;
+    private List<NameValuePair> params;
 
-	public HttpClientUtil(String httpUrl, final List<NameValuePair> params1) {
+    public HttpClientUtil(String httpUrl, final List<NameValuePair> params1) {
+        if (!httpUrl.contains("http://")) {
+            httpUrl = "http://" + httpUrl;
+        }
+        url = httpUrl;
+        params = params1;
 
-		url = httpUrl;
-		params = params1;
+    }
 
-	}
+    public JSONObject httpClientCreate() {
+        try {
 
-	public JSONObject httpClientCreate() {
-		try {
+            HttpPost httpPostRequest = new HttpPost(url);
+            MyLog.d(TAG, "url is" + url);
 
-			HttpPost httpPostRequest = new HttpPost(url);
-			MyLog.d(TAG, "url is" + url);
+            httpPostRequest.addHeader("charset", HTTP.UTF_8);
 
-			httpPostRequest.addHeader("charset", HTTP.UTF_8);
+            HttpEntity httpEntity = new UrlEncodedFormEntity(params, HTTP.UTF_8);
+            MyLog.d(TAG, "params is" + params.toString());
 
-			HttpEntity httpEntity = new UrlEncodedFormEntity(params, HTTP.UTF_8);
-			MyLog.d(TAG, "params is" + params.toString());
+            httpPostRequest.setEntity(httpEntity);
 
-			httpPostRequest.setEntity(httpEntity);
+            DefaultHttpClient defaultHttpClient = new DefaultHttpClient();
 
-			DefaultHttpClient defaultHttpClient = new DefaultHttpClient();
-
-			defaultHttpClient.getParams().setParameter(
-					CoreConnectionPNames.CONNECTION_TIMEOUT, 8000);
-
-
-			defaultHttpClient.getParams().setParameter(
-					CoreConnectionPNames.SO_TIMEOUT, 8000);
-
-			HttpResponse httpResponse = new DefaultHttpClient()
-					.execute(httpPostRequest);
-
-			MyLog.d(TAG, "" + httpResponse.getStatusLine().getStatusCode());
-
-			if (httpResponse.getStatusLine().getStatusCode() == 200) {
+            defaultHttpClient.getParams().setParameter(
+                    CoreConnectionPNames.CONNECTION_TIMEOUT, 8000);
 
 
-				String response = EntityUtils
-						.toString(httpResponse.getEntity());
+            defaultHttpClient.getParams().setParameter(
+                    CoreConnectionPNames.SO_TIMEOUT, 8000);
 
-				MyLog.d(TAG, "response ori is :" + response);
+            HttpResponse httpResponse = new DefaultHttpClient()
+                    .execute(httpPostRequest);
 
-				response = response.replaceAll("\r\n|\n\r|\r|\n", "");
+            MyLog.d(TAG, "" + httpResponse.getStatusLine().getStatusCode());
+
+            if (httpResponse.getStatusLine().getStatusCode() == 200) {
 
 
+                String response = EntityUtils
+                        .toString(httpResponse.getEntity());
+
+                MyLog.d(TAG, "response ori is :" + response);
+
+                response = response.replaceAll("\r\n|\n\r|\r|\n", "");
 
 
+                JSONObject item = new JSONObject(response);
+                return item;
 
-				JSONObject item = new JSONObject(response);
-				return item;
+            } else {
+                return null;
+            }
 
-			} else {
-				return null;
-			}
+        } catch (Exception e) {
 
-		} catch (Exception e) {
+            e.printStackTrace();
+            MyLog.d(TAG, e.toString());
+            return null;
 
-			e.printStackTrace();
-			MyLog.d(TAG, e.toString());
-			return null;
+        }
 
-		}
-
-	}
+    }
 
 }

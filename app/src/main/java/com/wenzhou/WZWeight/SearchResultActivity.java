@@ -126,7 +126,7 @@ public class SearchResultActivity extends Activity {
 			@Override
 			public void onClick(View v) {
 				objFilter(1);
-				new GetWeightDetailTask().execute(Constant.getweightdetail);
+				new GetWeightDetailTask().execute(Constant.serverUrl + Constant.getweightdetail);
 			}
 		});
 
@@ -134,7 +134,7 @@ public class SearchResultActivity extends Activity {
 			@Override
 			public void onClick(View v) {
 				objFilter(mPagerCurrent - 1);
-				new GetWeightDetailTask().execute(Constant.getweightdetail);
+				new GetWeightDetailTask().execute(Constant.serverUrl + Constant.getweightdetail);
 			}
 		});
 
@@ -142,7 +142,7 @@ public class SearchResultActivity extends Activity {
 			@Override
 			public void onClick(View v) {
 				objFilter(mPagerCurrent + 1);
-				new GetWeightDetailTask().execute(Constant.getweightdetail);
+				new GetWeightDetailTask().execute(Constant.serverUrl + Constant.getweightdetail);
 			}
 		});
 
@@ -150,7 +150,7 @@ public class SearchResultActivity extends Activity {
 			@Override
 			public void onClick(View v) {
 				objFilter(mPagerCount);
-				new GetWeightDetailTask().execute(Constant.getweightdetail);
+				new GetWeightDetailTask().execute(Constant.serverUrl + Constant.getweightdetail);
 			}
 		});
 
@@ -173,7 +173,7 @@ public class SearchResultActivity extends Activity {
 		});
 
 		objFilter(1);
-		new GetWeightDetailTask().execute(Constant.getweightdetail);
+		new GetWeightDetailTask().execute(Constant.serverUrl + Constant.getweightdetail);
 	}
 
 

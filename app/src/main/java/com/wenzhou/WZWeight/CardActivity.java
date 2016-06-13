@@ -112,7 +112,7 @@ public class CardActivity extends Activity {
 			@Override
 			public void onClick(View v) {
 				objFilter(1);
-				new GetCardDetailTask().execute(Constant.getcarddetail);
+				new GetCardDetailTask().execute(Constant.serverUrl + Constant.getcarddetail);
 			}
 		});
 
@@ -120,7 +120,7 @@ public class CardActivity extends Activity {
 			@Override
 			public void onClick(View v) {
 				objFilter(mPagerCurrent - 1);
-				new GetCardDetailTask().execute(Constant.getcarddetail);
+				new GetCardDetailTask().execute(Constant.serverUrl + Constant.getcarddetail);
 			}
 		});
 
@@ -128,7 +128,7 @@ public class CardActivity extends Activity {
 			@Override
 			public void onClick(View v) {
 				objFilter(mPagerCurrent + 1);
-				new GetCardDetailTask().execute(Constant.getcarddetail);
+				new GetCardDetailTask().execute(Constant.serverUrl + Constant.getcarddetail);
 			}
 		});
 
@@ -136,7 +136,7 @@ public class CardActivity extends Activity {
 			@Override
 			public void onClick(View v) {
 				objFilter(mPagerCount);
-				new GetCardDetailTask().execute(Constant.getcarddetail);
+				new GetCardDetailTask().execute(Constant.serverUrl + Constant.getcarddetail);
 			}
 		});
 
@@ -184,7 +184,7 @@ public class CardActivity extends Activity {
 		getSharedPreferences("constant", Context.MODE_PRIVATE).edit().putString("cardfilter_cardno", "").commit();
 
 		objFilter(1);
-		new GetCardDetailTask().execute(Constant.getcarddetail);
+		new GetCardDetailTask().execute(Constant.serverUrl + Constant.getcarddetail);
 	}
 
 
@@ -240,7 +240,7 @@ public class CardActivity extends Activity {
 				AlertDialog.Builder builder = new AlertDialog.Builder(this).setTitle("��ϸ��Ϣ").setMessage("ȷ��ɾ���IC��?");
 				builder.setPositiveButton("ȷ��", new DialogInterface.OnClickListener() {
 					public void onClick(DialogInterface dialog, int whichButton) {
-						new DeleteCardTask().execute(Constant.deletecard);
+						new DeleteCardTask().execute(Constant.serverUrl + Constant.deletecard);
 					}
 				});
 				builder.setNegativeButton("ȡ��", new DialogInterface.OnClickListener() {
@@ -424,7 +424,7 @@ public class CardActivity extends Activity {
 			super.onPostExecute(result);
 			if (result) {
 				Toast.makeText(CardActivity.this, "ɾ��IC���ɹ���", Toast.LENGTH_SHORT).show();
-				new GetCardDetailTask().execute(Constant.getcarddetail);
+				new GetCardDetailTask().execute(Constant.serverUrl + Constant.getcarddetail);
 			}
 		}
 	}
@@ -491,7 +491,7 @@ public class CardActivity extends Activity {
 					getSharedPreferences("constant", Context.MODE_PRIVATE).edit().putString("cardfilter_cardno", cardnoInput.getText().toString()).commit();
 
 					objFilter(1);
-					new GetCardDetailTask().execute(Constant.getcarddetail);
+					new GetCardDetailTask().execute(Constant.serverUrl + Constant.getcarddetail);
 					Field field = dialog.getClass().getSuperclass().getDeclaredField("mShowing");
 					field.setAccessible(true);
 					field.set(dialog, true);

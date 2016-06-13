@@ -133,7 +133,7 @@ public class CarActivity extends Activity {
 			@Override
 			public void onClick(View v) {
 				objFilter(1);
-				new GetCarDetailTask().execute(Constant.getcardetail);
+				new GetCarDetailTask().execute(Constant.serverUrl + Constant.getcardetail);
 			}
 		});
 
@@ -141,7 +141,7 @@ public class CarActivity extends Activity {
 			@Override
 			public void onClick(View v) {
 				objFilter(mPagerCurrent - 1);
-				new GetCarDetailTask().execute(Constant.getcardetail);
+				new GetCarDetailTask().execute(Constant.serverUrl + Constant.getcardetail);
 			}
 		});
 
@@ -149,7 +149,7 @@ public class CarActivity extends Activity {
 			@Override
 			public void onClick(View v) {
 				objFilter(mPagerCurrent + 1);
-				new GetCarDetailTask().execute(Constant.getcardetail);
+				new GetCarDetailTask().execute(Constant.serverUrl + Constant.getcardetail);
 			}
 		});
 
@@ -157,7 +157,7 @@ public class CarActivity extends Activity {
 			@Override
 			public void onClick(View v) {
 				objFilter(mPagerCount);
-				new GetCarDetailTask().execute(Constant.getcardetail);
+				new GetCarDetailTask().execute(Constant.serverUrl + Constant.getcardetail);
 			}
 		});
 
@@ -192,10 +192,10 @@ public class CarActivity extends Activity {
 		}
 
 		objFilter(1);
-		new GetCarDetailTask().execute(Constant.getcardetail);
-		new GetRegionTask().execute(Constant.getregioninfo);
-		new GetRubbishSourceTask().execute(Constant.getrubbishsourceinfo);
-		new GetCarTypeTask().execute(Constant.getcartypeinfo);
+		new GetCarDetailTask().execute(Constant.serverUrl + Constant.getcardetail);
+		new GetRegionTask().execute(Constant.serverUrl + Constant.getregioninfo);
+		new GetRubbishSourceTask().execute(Constant.serverUrl + Constant.getrubbishsourceinfo);
+		new GetCarTypeTask().execute(Constant.serverUrl + Constant.getcartypeinfo);
 	}
 
 
@@ -265,7 +265,7 @@ public class CarActivity extends Activity {
 				AlertDialog.Builder builder = new AlertDialog.Builder(this).setTitle("详细信息").setMessage("确定删除该车辆?");
 				builder.setPositiveButton("确认", new DialogInterface.OnClickListener() {
 					public void onClick(DialogInterface dialog, int whichButton) {
-						new DeleteCarTask().execute(Constant.deletecar);
+						new DeleteCarTask().execute(Constant.serverUrl + Constant.deletecar);
 					}
 				});
 				builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
@@ -587,7 +587,7 @@ public class CarActivity extends Activity {
 			super.onPostExecute(result);
 			if (result) {
 				Toast.makeText(CarActivity.this, "删除车辆成功！", Toast.LENGTH_SHORT).show();
-				new GetCarDetailTask().execute(Constant.getcardetail);
+				new GetCarDetailTask().execute(Constant.serverUrl + Constant.getcardetail);
 			}
 		}
 	}
@@ -646,7 +646,7 @@ public class CarActivity extends Activity {
 			@Override
 			public void onItemSelected(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
 				operatingRegionID = mRegionData.get(arg2).getValue();
-				new GetRubbishSourceTask().execute(Constant.getrubbishsourceinfo);
+				new GetRubbishSourceTask().execute(Constant.serverUrl + Constant.getrubbishsourceinfo);
 			}
 
 			@Override
@@ -706,7 +706,7 @@ public class CarActivity extends Activity {
 							.putString("carfilter_cartype", ((SpinnerData) cartypeSpinner.getSelectedItem()).getValue()).commit();
 
 					objFilter(1);
-					new GetCarDetailTask().execute(Constant.getcardetail);
+					new GetCarDetailTask().execute(Constant.serverUrl + Constant.getcardetail);
 					Field field = dialog.getClass().getSuperclass().getDeclaredField("mShowing");
 					field.setAccessible(true);
 					field.set(dialog, true);

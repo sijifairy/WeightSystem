@@ -137,9 +137,9 @@ public class CardEditActivity extends Activity {
 					MyLog.e(TAG, e.getMessage());
 				}
 				if (type.equals("new")) {
-					new NewCardTask().execute(Constant.insertcard);
+					new NewCardTask().execute(Constant.serverUrl + Constant.insertcard);
 				} else if (type.equals("edit")) {
-					new EditCardTask().execute(Constant.editcard);
+					new EditCardTask().execute(Constant.serverUrl + Constant.editcard);
 				}
 			}
 		});
@@ -161,7 +161,7 @@ public class CardEditActivity extends Activity {
 			}
 		});
 		isFirst = true;
-		new GetPoundsTask().execute(Constant.getpoundinfo);
+		new GetPoundsTask().execute(Constant.serverUrl + Constant.getpoundinfo);
 	}
 
 
@@ -244,7 +244,7 @@ public class CardEditActivity extends Activity {
 
 
 				}
-				new GetNoCardCarTask().execute(Constant.getnocardcar);
+				new GetNoCardCarTask().execute(Constant.serverUrl + Constant.getnocardcar);
 			}
 		}
 
@@ -314,7 +314,7 @@ public class CardEditActivity extends Activity {
 				if (type.equals("new")) {
 					dialogMine.hide();
 				} else if (type.equals("edit")) {
-					new GetCardDetailTask().execute(Constant.getcarddetail);
+					new GetCardDetailTask().execute(Constant.serverUrl + Constant.getcarddetail);
 				}
 			}
 		}
