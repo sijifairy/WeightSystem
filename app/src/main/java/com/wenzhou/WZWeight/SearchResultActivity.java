@@ -314,7 +314,7 @@ public class SearchResultActivity extends Activity {
 				R.id.linear_item_RubbishSourceName, R.id.linear_item_JingZhong });
 		weightListView.setAdapter(mSimpleAdapter);
 		currentpage.setText(mPagerCurrent + "/" + mPagerCount);
-		statistic.setText("\t共\t" + mCarCount + "车次,\t\t" + mAllNet + "公斤.");
+		statistic.setText("\t共\t" + mCarCount + "车次,\t\t" + mAllNet + "吨.");
 
 		prevpage.setEnabled(true);
 		firstpage.setEnabled(true);

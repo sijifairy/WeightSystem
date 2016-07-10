@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="@color/white" >
+    android:background="@color/white">
 
     <!-- Top "垃圾计量系统" -->
 
@@ -11,7 +11,7 @@
         android:layout_width="fill_parent"
         android:layout_height="60dp"
         android:background="@color/login_title_backColor"
-        android:gravity="center" >
+        android:gravity="center">
 
         <TextView
             android:layout_width="wrap_content"
@@ -25,14 +25,20 @@
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:layout_marginTop="60dp"
-        android:background="@drawable/index_background"
-        android:gravity="bottom" 
+        android:gravity="bottom"
         android:orientation="vertical">
-		<!-- 数据查询 -->
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:scaleType="centerCrop"
+            android:src="@drawable/mainbg" />
+        <!-- 数据查询 -->
         <LinearLayout
-        	android:id="@+id/linear_search"
+            android:id="@+id/linear_search"
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content" 
+            android:layout_height="wrap_content"
             android:background="@drawable/linearlayout_selector">
 
             <ImageView
@@ -42,8 +48,7 @@
                 android:gravity="right"
                 android:paddingLeft="30dp"
                 android:scaleType="center"
-                android:src="@drawable/menua1" >
-            </ImageView>
+                android:src="@drawable/menua1"></ImageView>
 
             <TextView
                 android:layout_width="match_parent"
@@ -56,15 +61,16 @@
                 android:textColor="@color/black"
                 android:textSize="18sp" />
         </LinearLayout>
+
         <View
-        android:layout_width="match_parent"
-        android:layout_height="1px"
-        android:background="#9a9a9a" />
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="#9a9a9a" />
         <!-- IC卡管理-->
         <LinearLayout
-        	android:id="@+id/linear_card"
+            android:id="@+id/linear_card"
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content" 
+            android:layout_height="wrap_content"
             android:background="@drawable/linearlayout_selector">
 
             <ImageView
@@ -74,8 +80,7 @@
                 android:gravity="right"
                 android:paddingLeft="30dp"
                 android:scaleType="center"
-                android:src="@drawable/menub1" >
-            </ImageView>
+                android:src="@drawable/menub1"></ImageView>
 
             <TextView
                 android:layout_width="match_parent"
@@ -88,15 +93,16 @@
                 android:textColor="@color/black"
                 android:textSize="18sp" />
         </LinearLayout>
+
         <View
-        android:layout_width="match_parent"
-        android:layout_height="1px"
-        android:background="#9a9a9a" />
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="#9a9a9a" />
         <!-- 车辆管理-->
         <LinearLayout
-        	android:id="@+id/linear_car"
+            android:id="@+id/linear_car"
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content" 
+            android:layout_height="wrap_content"
             android:background="@drawable/linearlayout_selector">
 
             <ImageView
@@ -106,8 +112,7 @@
                 android:gravity="right"
                 android:paddingLeft="30dp"
                 android:scaleType="center"
-                android:src="@drawable/menuc1" >
-            </ImageView>
+                android:src="@drawable/menuc1"></ImageView>
 
             <TextView
                 android:layout_width="match_parent"
@@ -120,15 +125,16 @@
                 android:textColor="@color/black"
                 android:textSize="18sp" />
         </LinearLayout>
+
         <View
-        android:layout_width="match_parent"
-        android:layout_height="1px"
-        android:background="#9a9a9a" />
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="#9a9a9a" />
         <!-- 系统管理-->
         <LinearLayout
-        	android:id="@+id/linear_tool"
+            android:id="@+id/linear_tool"
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content" 
+            android:layout_height="wrap_content"
             android:background="@drawable/linearlayout_selector">
 
             <ImageView
@@ -138,13 +144,12 @@
                 android:gravity="right"
                 android:paddingLeft="30dp"
                 android:scaleType="center"
-                android:src="@drawable/menud1" >
-            </ImageView>
+                android:src="@drawable/menud1"></ImageView>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="65dp"
-               android:drawableRight="@drawable/enter"
+                android:drawableRight="@drawable/enter"
                 android:gravity="center_vertical"
                 android:paddingLeft="20dp"
                 android:paddingRight="20dp"

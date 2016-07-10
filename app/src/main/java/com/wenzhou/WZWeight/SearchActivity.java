@@ -261,7 +261,7 @@ public class SearchActivity extends Activity {
                 for (int i = 0; i < yesterdayData.size(); i++) {
                     Map<String, Object> record = yesterdayData.get(i);
                     str += ("\t\t" + record.get("Classname").toString() + record.get("Info").toString() + "共称重 " + record.get("NumCount").toString() + " 次" + "总净重 "
-                            + record.get("JingZhong").toString() + " 公斤.\n\r");
+                            + record.get("JingZhong").toString() + " 吨.\n\r");
                 }
                 yesterday_statistics.setText(str);
                 new GetRegionTask().execute(Constant.serverUrl + Constant.getregioninfo);
