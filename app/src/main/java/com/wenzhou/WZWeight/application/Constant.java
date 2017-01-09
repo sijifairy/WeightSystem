@@ -3,7 +3,7 @@ package com.wenzhou.WZWeight.application;
 import com.wenzhou.WZWeight.sqlite.DataBaseAdapter;
 
 public class Constant {
-    public static final String getInterfaceUrl = "http://118.145.16.201:8922/Data.asmx/GetInterface";
+    public static final String getInterfaceUrl = "http://221.122.108.190:8922/Data.asmx/GetInterface";
 
     public static String serverUrl = "http://118.145.16.201:8922/Data.asmx";
 
